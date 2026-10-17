@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INGENOVA - Ingénierie & Innovation</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <!-- Arrière-plan global unifié pour toutes les sections -->
+    <div class="global-background"></div>
+
+    <!-- Header moderne -->
+    <header>
+        <a href="#" class="logo-link">
+            <img src="code header/IMG/LOGO INGENOVA.png" alt="Logo INGENOVA" class="logo-img">
+        </a>
+    
+        <ul class="nav-links">
+            <li><a href="#domaines">Domaines</a></li>
+            <li><a href="#formations">Formations</a></li>
+            <li><a href="#temoignages">Avis</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="#estimateur" class="cta-header">Collaborer</a>
+    </header>
+
+    <!-- Section d'accroche (Hero) -->
+    <section class="hero-section">
+        <h1>L'Excellence à l'Intersection du Numérique, de l'Industrie et de l'Ingénierie</h1>
+        <p>De la conception des machines industrielles aux systèmes embarqués, en passant par le développement web, la construction et la fabrication mécanique.</p>
+    </section>
+
+    <!-- Section Domaines -->
+    <section id="domaines" class="domains-section">
+        <div class="section-title">
+            <h2>Nos Domaines d'Expertise</h2>
+            <p>Des solutions globales de l'idée à la réalisation concrète</p>
+        </div>
+
+        <div class="domains-grid">
+            <!-- Carte 1 : Ingénierie & Mécanique -->
+            <div class="domain-card">
+                <div class="domain-slider">
+                    <img src="code header/IMG/ingenierie1..jpg" alt="Ingénierie 1" class="slide-img">
+                    <img src="code header/IMG/ingenierie2..jpg" alt="Ingénierie 2" class="slide-img">
+                    <img src="code header/IMG/ingenierie3..jpg" alt="Ingénierie 3" class="slide-img">
+                </div>
+                <div class="domain-content">
+                    <div class="domain-icon">⚙️</div>
+                    <h3>Ingénierie & Fabrication</h3>
+                    <p>Conception de machines industrielles, modélisation 3D, études techniques et fabrication mécanique de haute précision.</p>
+                    <button class="domain-gallery-btn" onclick="openGalleryAndFilter('mecanique')">Voir les réalisations ➔</button>
+                </div>
+            </div>
+
+            <!-- Carte 2 : Systèmes Embarqués -->
+            <div class="domain-card">
+                <div class="domain-slider">
+                    <img src="code header/IMG/embarque1.jpg" alt="Embarqué 1" class="slide-img">
+                    <img src="code header/IMG/embarque2.jpg" alt="Embarqué 2" class="slide-img">
+                    <img src="code header/IMG/embarque3.jpg" alt="Embarqué 3" class="slide-img">
+                </div>
+                <div class="domain-content">
+                    <div class="domain-icon">🔌</div>
+                    <h3>Systèmes Embarqués</h3>
+                    <p>Intégration de microcontrôleurs (Arduino, ESP32), automatisation, capteurs intelligents et solutions IoT connectées.</p>
+                    <button class="domain-gallery-btn" onclick="openGalleryAndFilter('embarque')">Voir les réalisations ➔</button>
+                </div>
+            </div>
+
+            <!-- Carte 3 : Développement Web -->
+            <div class="domain-card">
+                <div class="domain-slider">
+                    <img src="code header/IMG/web1.jpg" alt="Web 1" class="slide-img">
+                    <img src="code header/IMG/web2.jpg" alt="Web 2" class="slide-img">
+                    <img src="code header/IMG/web3.png" alt="Web 3" class="slide-img">
+                </div>
+                <div class="domain-content">
+                    <div class="domain-icon">💻</div>
+                    <h3>Développement Web</h3>
+                    <p>Création d'applications web dynamiques sur mesure (PHP, MySQL), interfaces de gestion et plateformes sécurisées.</p>
+                    <button class="domain-gallery-btn" onclick="openGalleryAndFilter('web')">Voir les réalisations ➔</button>
+                </div>
+            </div>
+
+            <!-- Carte 4 : Bâtiment & Aménagement -->
+            <div class="domain-card">
+                <div class="domain-slider">
+                    <img src="code header/IMG/batiment1.jpg" alt="Bâtiment 1" class="slide-img">
+                    <img src="code header/IMG/batiment2.jpg" alt="Bâtiment 2" class="slide-img">
+                    <img src="code header/IMG/batiment3.jpg" alt="Bâtiment 3" class="slide-img">
+                </div>
+                <div class="domain-content">
+                    <div class="domain-icon">🏢</div>
+                    <h3>Bâtiment & Aménagement</h3>
+                    <p>Installations électriques professionnelles, design d'intérieurs modernes (panneaux muraux, éclairages LED) et plans architecturaux.</p>
+                    <button class="domain-gallery-btn" onclick="openGalleryAndFilter('batiment')">Voir les réalisations ➔</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Galerie Photo Pure (Facilement enrichissable) -->
+    <section id="realisations" class="gallery-section hidden-gallery">
+        <div class="section-title">
+            <h2>Nos Réalisations</h2>
+            <p>Explorez notre galerie de projets et zoomez sur nos travaux</p>
+        </div>
+
+        <!-- Boutons de filtres -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProjects('all', event)">Tous</button>
+            <button class="filter-btn" onclick="filterProjects('web', event)">Web & App</button>
+            <button class="filter-btn" onclick="filterProjects('embarque', event)">Embarqué & IoT</button>
+            <button class="filter-btn" onclick="filterProjects('mecanique', event)">Mécanique & Industrie</button>
+            <button class="filter-btn" onclick="filterProjects('batiment', event)">Bâtiment & Électricité</button>
+        </div>
+
+        <!-- Grille de photos (Pour rajouter une photo plus tard, duplique simplement une ligne .gallery-item) -->
+        <div class="photo-gallery-grid">
+            <!-- WEB -->
+            <div class="gallery-item" data-category="web">
+                <img src="code header/IMG/web1.jpg" alt="Application Web 1" class="gallery-img">
+            </div>
+            <div class="gallery-item" data-category="web">
+                <img src="code header/IMG/web2.jpg" alt="Application Web 2" class="gallery-img">
+            </div>
+            <div class="gallery-item" data-category="web">
+                <img src="code header/IMG/web3.png" alt="Application Web 3" class="gallery-img">
+            </div>
+
+            <!-- EMBARQUÉ -->
+            <div class="gallery-item" data-category="embarque">
+                <img src="code header/IMG/embarque1.jpg" alt="Système Embarqué 1" class="gallery-img">
+            </div>
+            <div class="gallery-item" data-category="embarque">
+                <img src="code header/IMG/embarque2.jpg" alt="Système Embarqué 2" class="gallery-img">
+            </div>
+            <div class="gallery-item" data-category="embarque">
+                <img src="code header/IMG/embarque3.jpg" alt="Système Embarqué 3" class="gallery-img">
+            </div>
+
+            <!-- MÉCANIQUE -->
+            <div class="gallery-item" data-category="mecanique">
+                <img src="code header/IMG/ingenierie1..jpg" alt="Mécanique 1" class="gallery-img">
+            </div>
+            <div class="gallery-item" data-category="mecanique">
+                <img src="code header/IMG/ingenierie2..jpg" alt="Mécanique 2" class="gallery-img">
+            </div>
+            <div class="gallery-item" data-category="mecanique">
+                <img src="code header/IMG/ingenierie3..jpg" alt="Mécanique 3" class="gallery-img">
+            </div>
+
+            <!-- BÂTIMENT -->
+            <div class="gallery-item" data-category="batiment">
+                <img src="code header/IMG/batiment1.jpg" alt="Bâtiment 1" class="gallery-img">
+            </div>
+            <div class="gallery-item" data-category="batiment">
+                <img src="code header/IMG/batiment2.jpg" alt="Bâtiment 2" class="gallery-img">
+            </div>
+            <div class="gallery-item" data-category="batiment">
+                <img src="code header/IMG/batiment3.jpg" alt="Bâtiment 3" class="gallery-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Formations -->
+    <section id="formations" class="formations-section">
+        <div class="section-title">
+            <h2>Nos Formations & Ateliers</h2>
+            <p>Transmettre le savoir-faire technique et former les talents de demain</p>
+        </div>
+
+        <div class="formations-grid">
+            <div class="formation-card">
+                <div class="formation-icon">🎓</div>
+                <h3>Systèmes Embarqués & IoT</h3>
+                <p>Apprenez à programmer des cartes Arduino et ESP32, à connecter des capteurs intelligents et à concevoir vos propres systèmes automatisés de A à Z.</p>
+                <ul class="formation-list">
+                    <li>Prise en main de l'IDE Arduino</li>
+                    <li>Connexion et gestion des capteurs</li>
+                    <li>Projets pratiques et connectés (IoT)</li>
+                </ul>
+            </div>
+            <div class="formation-card">
+                <div class="formation-icon">📚</div>
+                <h3>Développement Web Appliqué</h3>
+                <p>Maîtrisez les bases du développement dynamique en créant des applications web fonctionnelles connectées à des bases de données relationnelles.</p>
+                <ul class="formation-list">
+                    <li>Bases solides en PHP et MySQL</li>
+                    <li>Gestion des utilisateurs et formulaires</li>
+                    <li>Création d'interfaces d'administration</li>
+                </ul>
+            </div>
+            <div class="formation-card">
+                <div class="formation-icon">💡</div>
+                <h3>Électricité & Installations Pro</h3>
+                <p>Acquérez les compétences techniques indispensables pour la réalisation de schémas électriques, le câblage sécurisé et l'intégration de luminaires LED.</p>
+                <ul class="formation-list">
+                    <li>Sécurité et normes de câblage</li>
+                    <li>Utilisation des régulateurs (LM317)</li>
+                    <li>Circuits d'éclairage moderne</li>
+                </ul>
+            </div>
+            <div class="formation-card">
+                <div class="formation-icon">⚙️</div>
+                <h3>Conception Mécanique & Machines</h3>
+                <p>Formez-vous aux techniques de modélisation 3D, à l'étude de faisabilité et à la fabrication de pièces et de machines industrielles de haute précision.</p>
+                <ul class="formation-list">
+                    <li>Modélisation 3D et plans techniques</li>
+                    <li>Études de conception industrielle</li>
+                    <li>Fabrication et assemblage mécanique</li>
+                </ul>
+            </div>
+            <div class="formation-card">
+                <div class="formation-icon">🏢</div>
+                <h3>Bâtiment & Aménagement Intérieur</h3>
+                <p>Maîtrisez l'art de l'agencement moderne, de la pose de panneaux muraux en bois/PVC jusqu'à l'optimisation des espaces architecturaux.</p>
+                <ul class="formation-list">
+                    <li>Design et plans architecturaux</li>
+                    <li>Pose de panneaux muraux décoratifs</li>
+                    <li>Agencement d'espaces professionnels</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages / Avis -->
+    <section id="temoignages" class="testimonials-section">
+        <div class="section-title">
+            <h2>Avis & Témoignages</h2>
+            <p>Ce que nos partenaires, clients et stagiaires disent de nos prestations</p>
+        </div>
+
+        <div class="testimonials-grid" id="testimonialsGrid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Une qualité de travail irréprochable. La conception de notre application web de gestion s'est déroulée de manière fluide et ultra-professionnelle."</p>
+                <div class="testimonial-author">
+                    <strong>Héritier K.</strong>
+                    <span>Entrepreneur / Goma</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"La formation en systèmes embarqués m'a permis de concrétiser mon projet IoT. Les explications sont claires et l'accompagnement est top."</p>
+                <div class="testimonial-author">
+                    <strong>Christian M.</strong>
+                    <span>Étudiant en Informatique</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Installation électrique et aménagement LED parfaits dans notre bureau. Sérieux, ponctuel et à l'écoute des moindres détails."</p>
+                <div class="testimonial-author">
+                    <strong>Sarah N.</strong>
+                    <span>Responsable d'Agence</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-testimonial-container">
+            <h3>Partagez votre avis</h3>
+            <form id="testimonialForm" class="testimonial-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="authorName">Votre Nom / Fonction</label>
+                        <input type="text" id="authorName" placeholder="Ex: David L. (Client)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="authorRating">Note (sur 5 étoiles)</label>
+                        <select id="authorRating" required>
+                            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (5/5)</option>
+                            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (4/5)</option>
+                            <option value="⭐⭐⭐">⭐⭐⭐ (3/5)</option>
+                            <option value="⭐⭐">⭐⭐ (2/5)</option>
+                            <option value="⭐">⭐ (1/5)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="authorMessage">Votre Commentaire</label>
+                    <textarea id="authorMessage" rows="3" placeholder="Qu'avez-vous pensé de nos services ?" required></textarea>
+                </div>
+                <button type="submit" class="submit-review-btn">Publier mon avis</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact-section">
+        <div class="section-title">
+            <h2>Parlons de Votre Projet</h2>
+            <p>Une question, un besoin en ingénierie ou une collaboration ? Contactez-nous</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Restons en Contact</h3>
+                <p>Nos équipes d'ingénieurs et de techniciens sont à votre écoute pour donner vie à vos projets matériels, numériques ou architecturaux.</p>
+            
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <strong>Localisation</strong>
+                        <p>Goma, Nord-Kivu, RDC</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-icon">✉️</span>
+                    <div>
+                        <strong>Email</strong>
+                        <p>ingenova@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <div>
+                        <strong>Téléphone / WhatsApp</strong>
+                        <p>+243 975 286 030</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/243975286030?text=Bonjour%20INGENOVA,%20je%20souhaite%20discuter%20d'un%20projet." target="_blank" class="whatsapp-direct-btn">
+                    💬 Discuter sur WhatsApp
+                </a>
+            </div>
+
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Votre Nom</label>
+                    <input type="text" id="name" placeholder="Ex: Romulus Chrispin" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Votre Email</label>
+                    <input type="email" id="email" placeholder="Ex: romuluschrispin@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Votre Message</label>
+                    <textarea id="message" rows="5" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Envoyer le Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Réseaux Sociaux -->
+    <section class="socials-section">
+        <h3>Restons Connectés</h3>
+        <div class="socials-icons">
+            <a href="https://wa.me/243975286030" target="_blank" class="social-icon" title="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2a14 14 0 0 0-12 21.35L2.3 29.7l6.55-1.71A14 14 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.62l-.42-.25-4.39 1.15 1.17-4.28-.27-.44A11.5 11.5 0 1 1 16 27.5zm6.31-8.59c-.35-.18-2.07-1.02-2.39-1.14-.32-.12-.55-.18-.78.18-.23.35-.9 1.14-1.1 1.37-.2.23-.4.26-.75.09-.35-.18-1.48-.54-2.82-1.74-1.04-.93-1.74-2.08-1.95-2.43-.21-.35-.02-.54.15-.71.16-.16.35-.42.53-.63.18-.21.24-.35.35-.58.12-.23.06-.43-.03-.61-.09-.18-.78-1.88-1.07-2.58-.28-.68-.57-.59-.78-.6l-.67-.01c-.23 0-.6.09-.91.42-.31.33-1.19 1.16-1.19 2.83 0 1.67 1.22 3.28 1.39 3.51.17.23 2.4 3.66 5.82 5.13.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.07-.85 2.36-1.67.29-.82.29-1.52.2-1.67-.09-.15-.32-.24-.67-.42z"/></svg>
+            </a>
+            <a href="https://facebook.com/INGENOVA" target="_blank" class="social-icon" title="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M29 0H3C1.35 0 0 1.35 0 3v26c0 1.65 1.35 3 3 3h13V18h-4v-5h4V9.5C16 5.3 18.6 3 22.3 3c1.7 0 3.1.1 3.5.2v4h-2.5c-2 0-2.4 1-2.4 2.4V13h5l-.7 5h-4.3v14h7c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2.88c4.27 0 4.78.02 6.46.1 1.56.07 2.41.34 2.97.56.75.29 1.28.64 1.84 1.2.56.56.91 1.09 1.2 1.84.22.56.49 1.41.56 2.97.08 1.68.1 2.19.1 6.46s-.02 4.78-.1 6.46c-.07 1.56-.34 2.41-.56 2.97-.29.75-.64 1.28-1.2 1.84-.56.56-1.09.91-1.84 1.2-.56.22-1.41.49-2.97.56-1.68.08-2.19.1-6.46.1s-4.78-.02-6.46-.1c-1.56-.07-2.41-.34-2.97-.56-.75-.29-1.28-.64-1.84-1.2-.56-.56-.91-1.09-1.2-1.84-.22-.56-.49-1.41-.56-2.97-.08-1.68-.1-2.19-.1-6.46s.02-4.78.1-6.46c.07-1.56.34-2.41.56-2.97.29-.75.64-1.28 1.2-1.84.56-.56 1.09-.91 1.84-1.2.56-.22 1.41-.49 2.97-.56 1.68-.08 2.19-.1 6.46-.1M16 0C11.64 0 11.09.02 9.38.1 7.67.18 6.5.45 5.48.85c-1.05.41-1.94.96-2.83 1.85C1.76 3.59 1.21 4.48.8 5.53.4 6.55.13 7.72.05 9.43-.02 11.14 0 11.69 0 16s.02 4.86.1 6.57c.08 1.71.35 2.88.75 3.9.41 1.05.96 1.94 1.85 2.83.89.89 1.78 1.44 2.83 1.85 1.02.4 2.19.67 3.9.75 1.71.08 2.26.1 6.57.1s4.86-.02 6.57-.1c1.71-.08 2.88-.35 3.9-.75 1.05-.41 1.94-.96 2.83-1.85.89-.89 1.44-1.78 1.85-2.83.4-1.02.67-2.19.75-3.9.08-1.71.1-2.26.1-6.57s-.02-4.86-.1-6.57c-.08-1.71-.35-2.88-.75-3.9-.41-1.05-.96-1.94-1.85-2.83-.89-.89-1.78-1.44-2.83-1.85-1.02-.4-2.19-.67-3.9-.75C20.86.02 20.36 0 16 0zm0 7.78a8.22 8.22 0 1 0 0 16.44 8.22 8.22 0 0 0 0-16.44zM16 21a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm8.43-14.82a1.92 1.92 0 1 0 0 3.84 1.92 1.92 0 0 0 0-3.84z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M29 0H3C1.35 0 0 1.35 0 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM9.5 27H5V12h4.5v15zM7.25 10.25a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5zM27 27h-4.5v-7.5c0-1.79-.04-4.1-2.5-4.1-2.5 0-2.88 1.95-2.88 3.96V27H12V12h4.32v2.01h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.02 5.42 6.95V27z"/></svg>
+            </a>
+            <a href="mailto:contact@ingenova.com" class="social-icon" title="Envoyer un e-mail">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-2.2 2L16 14.78 6.2 8zM4 24V10.28l10.88 7.93a1 1 0 0 0 1.24 0L27 10.28V24z"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Bouton WhatsApp Flottant -->
+    <a href="https://wa.me/243975286030?text=Bonjour%20INGENOVA,%20je%20souhaite%20avoir%20plus%20d'informations." target="_blank" class="whatsapp-float" title="Discuter sur WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="currentColor">
+            <path d="M16 2a14 14 0 0 0-12 21.35L2.3 29.7l6.55-1.71A14 14 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.62l-.42-.25-4.39 1.15 1.17-4.28-.27-.44A11.5 11.5 0 1 1 16 27.5zm6.31-8.59c-.35-.18-2.07-1.02-2.39-1.14-.32-.12-.55-.18-.78.18-.23.35-.9 1.14-1.1 1.37-.2.23-.4.26-.75.09-.35-.18-1.48-.54-2.82-1.74-1.04-.93-1.74-2.08-1.95-2.43-.21-.35-.02-.54.15-.71.16-.16.35-.42.53-.63.18-.21.24-.35.35-.58.12-.23.06-.43-.03-.61-.09-.18-.78-1.88-1.07-2.58-.28-.68-.57-.59-.78-.6l-.67-.01c-.23 0-.6.09-.91.42-.31.33-1.19 1.16-1.19 2.83 0 1.67 1.22 3.28 1.39 3.51.17.23 2.4 3.66 5.82 5.13.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.07-.85 2.36-1.67.29-.82.29-1.52.2-1.67-.09-.15-.32-.24-.67-.42z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 INGENOVA. Tous droits réservés. L'Excellence par l'Innovation.</p>
+    </footer>
+
+    <!-- Estimateur de Devis -->
+    <section id="estimateur" class="estimator-section">
+        <div class="section-title">
+            <h2>Estimateur de Projet</h2>
+            <p>Configurez votre besoin et obtenez une estimation instantanée</p>
+        </div>
+        <div class="estimator-container">
+            <div class="estimator-form">
+                <div class="est-group">
+                    <label for="projectType">1. Sélectionnez votre domaine de projet :</label>
+                    <select id="projectType" onchange="calculateEstimate()">
+                        <option value="web">Développement Web (Application / Site sur mesure)</option>
+                        <option value="embarque">Systèmes Embarqués & IoT (Arduino / ESP32)</option>
+                        <option value="mecanique">Ingénierie & Fabrication Mécanique</option>
+                        <option value="batiment">Bâtiment & Installation Électrique / LED</option>
+                    </select>
+                </div>
+                <div class="est-group">
+                    <label for="projectScope">2. Envergure ou complexité du projet :</label>
+                    <select id="projectScope" onchange="calculateEstimate()">
+                        <option value="simple">Standard / Essentiel</option>
+                        <option value="intermediaire">Professionnel / Sur mesure</option>
+                        <option value="avance">Complexe / Industriel ou Avancé</option>
+                    </select>
+                </div>
+                <div class="est-group">
+                    <label>3. Options et services inclus :</label>
+                    <div class="checkbox-options">
+                        <label><input type="checkbox" id="optSupport" value="50" onchange="calculateEstimate()"> Maintenance & Suivi technique</label>
+                        <label><input type="checkbox" id="optUrgent" value="100" onchange="calculateEstimate()"> Traitement prioritaire (Urgent)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="estimator-result">
+                <h3>Estimation Indicative</h3>
+                <div class="price-display" id="priceOutput">À partir de $300</div>
+                <p class="est-note">*Cette estimation est indicative et dépend des spécifications exactes de votre cahier des charges.</p>
+                <a href="#" id="whatsappQuoteBtn" target="_blank" class="whatsapp-quote-btn">
+                    💬 Envoyer ce projet sur WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts JavaScript unifiés -->
+    <script>
+        // 1. Témoignages
+        document.getElementById('testimonialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('authorName').value;
+            const rating = document.getElementById('authorRating').value;
+            const message = document.getElementById('authorMessage').value;
+            const grid = document.getElementById('testimonialsGrid');
+            const newCard = document.createElement('div');
+            newCard.className = 'testimonial-card';
+            newCard.innerHTML = `
+                <div class="testimonial-rating">${rating}</div>
+                <p class="testimonial-text">"${message}"</p>
+                <div class="testimonial-author">
+                    <strong>${name}</strong>
+                    <span>Visiteur / Client</span>
+                </div>
+            `;
+            grid.appendChild(newCard);
+            document.getElementById('testimonialForm').reset();
+            alert('Merci ! Votre avis a été ajouté avec succès.');
+        });
+
+        // 2. Navigation active
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links li a');
+        window.addEventListener('scroll', () => {
+            let scrollY = window.pageYOffset;
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 150;
+                const sectionId = section.getAttribute('id');
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + sectionId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // 3. Ouvrir galerie et filtrer
+        function openGalleryAndFilter(categoryName) {
+            const gallerySection = document.getElementById('realisations');
+            gallerySection.classList.remove('hidden-gallery');
+            gallerySection.classList.add('visible-gallery');
+
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (categoryName === 'all' || itemCategory === categoryName) {
+                    item.style.display = 'block';
+                    item.style.opacity = '1';
+                } else {
+                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                }
+            });
+
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(categoryName)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            gallerySection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 4. Filtrer manuellement
+        function filterProjects(category, event) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (category === 'all' || itemCategory === category) {
+                    item.style.display = 'block';
+                    item.style.opacity = '1';
+                } else {
+                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                }
+            });
+        }
+
+        // 5. Visionneuse (Modal Zoom plein écran) pour les photos
+        document.querySelectorAll('.gallery-img').forEach(img => {
+            img.addEventListener('click', function() {
+                let modal = document.getElementById('imageModal');
+                if (!modal) {
+                    modal = document.createElement('div');
+                    modal.id = 'imageModal';
+                    modal.className = 'modal-viewer';
+                    modal.innerHTML = `
+                        <span class="modal-close" onclick="closeModal()">&times;</span>
+                        <img id="modalImg" class="modal-content" alt="Agrandissement de la réalisation">
+                    `;
+                    document.body.appendChild(modal);
+                }
+                const modalImg = document.getElementById('modalImg');
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            });
+        });
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            if (modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // 6. Estimateur
+        function calculateEstimate() {
+            const type = document.getElementById('projectType').value;
+            const scope = document.getElementById('projectScope').value;
+            const optSupport = document.getElementById('optSupport').checked;
+            const optUrgent = document.getElementById('optUrgent').checked;
+
+            let basePrice = 200;
+            if (type === 'web') basePrice = 300;
+            if (type === 'embarque') basePrice = 250;
+            if (type === 'mecanique') basePrice = 450;
+            if (type === 'batiment') basePrice = 350;
+
+            if (scope === 'intermediaire') basePrice *= 1.7;
+            if (scope === 'avance') basePrice *= 2.8;
+
+            if (optSupport) basePrice += 50;
+            if (optUrgent) basePrice += 100;
+
+            const finalPrice = Math.round(basePrice);
+            document.getElementById('priceOutput').innerText = `À partir de $${finalPrice}`;
+
+            const text = `Bonjour INGENOVA, je souhaite réaliser un projet de type *${type}* (Envergure: ${scope}) estimé à environ $${finalPrice}. J'aimerais en discuter.`;
+            const encodedText = encodeURIComponent(text);
+            document.getElementById('whatsappQuoteBtn').href = `https://wa.me/243975286030?text=${encodedText}`;
+        }
+
+        window.onload = function() {
+            calculateEstimate();
+        };
+
+        const collabBtn = document.querySelector('.cta-header');
+        const estimatorSection = document.getElementById('estimateur');
+        if (collabBtn && estimatorSection) {
+            collabBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                estimatorSection.classList.add('active');
+                estimatorSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+</html>
